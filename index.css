@@ -41,25 +41,18 @@ a:hover, a:active {
 
 /* layout */
 
-header {
-    background-color: #5f29a3;
+header, section, footer {
     padding: 2.8rem 0;
 }
 
-section {
-    padding: 2.8rem 0;
-}
-
-p {
-    margin: 1rem 0;
-    font-size: 1rem;
-}
-
-.section-two {
+header, .section-two {
     background-color: #5f29a3;
     color: whitesmoke;
 }
 
+p {
+    margin: 1rem 0;
+}
 
 .container {
     width: 38.75rem;
