@@ -36,6 +36,8 @@ a {
 }
 
 .btn-style-link {
+    /* allows margins on top and bottom as opposed to inline  */
+    display: inline-block;
     text-decoration: none;
     padding: 0.63rem 1.19rem;
     border-radius: 0.29rem;
