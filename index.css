@@ -44,28 +44,28 @@ a {
     font-weight: 500;
 }
 
-#buy {
+.btn-dark {
     background-color: #5f29a3;
     color: whitesmoke;
 }
 
-#info {
+.btn-light {
     background-color: #f0e0ff;
 }
 
-.section-two .btn-style-link, #info {
-    color: #5f29a3;
+.btn-mid {
+    background-color: #F0E0FF;
 }
 
-.section-two .btn-style-link {
-    background-color: whitesmoke;
+.btn-mid, .btn-light {
+    color: #5f29a3;
 }
 
 a:hover, a:active {
     color: #d4b44c;
 }
 
-.btn-style-link:hover, .btn-style-link:active, #buy:hover, #buy:active, #info:hover, #info:active {
+.btn-style-link:hover, .btn-style-link:active {
     background-color: #f3e885;
     color: #2b283a;
 }
