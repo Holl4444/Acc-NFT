@@ -1,120 +1,245 @@
 @font-face {
-   font-family: 'Roboto';
-   src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
 }
- 
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
 
- body {
-   font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 1rem;
-   font-weight: 400;
-   color: #2b283a;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- /* typography */
+body {
+  font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2b283a;
+}
 
- h1 {
-    font-size: 2.25em;
-    color: whitesmoke;
+/* typography */
+
+h1 {
+  font-size: 1.75rem;
+  color: whitesmoke;
+}
+
+h2 {
+  color: #451c7a;
+  font-size: 1.375rem;
 }
 
 h3 {
-    font-size: 1.25em;
-    color: #d0aaff;
+  font-size: 1.25rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1rem;
+  color: #d0aaff;
+}
+
+p {
+  /* Unitless line height value preferable, 1.5x the font size recommended */
+  line-height: 1.5;
+  text-align: justify;
 }
 
 /* links */
 
 a {
-    color: #ef5839;
-    text-decoration: underline dotted;
+  color: #ef5839;
+  text-decoration: underline dotted;
 }
 
 .btn-style-link {
-    /* allows margins on top and bottom as opposed to inline  */
-    display: inline-block;
-    text-decoration: none;
-    padding: 0.63rem 1.19rem;
-    border-radius: 0.29rem;
-    font-weight: 500;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.63rem 1.19rem;
+  border-radius: 0.29rem;
+  font-weight: 500;
+  margin-bottom: 1em;
 }
 
 .btn-dark {
-    background-color: #5f29a3;
-    color: whitesmoke;
+  background-color: #5f29a3;
+  color: whitesmoke;
 }
 
 .btn-light {
-    background-color: #f0e0ff;
+  background-color: #f0e0ff;
 }
 
 .btn-mid {
-    background-color: #F0E0FF;
+  background-color: #f0e0ff;
 }
 
-.btn-mid, .btn-light {
-    color: #5f29a3;
+.btn-mid,
+.btn-light {
+  color: #5f29a3;
 }
 
-a:hover, a:active {
-    color: #d4b44c;
+a:hover,
+a:active {
+  color: #d4b44c;
 }
 
-.btn-style-link:hover, .btn-style-link:active {
-    background-color: #f3e885;
-    color: #2b283a;
+.btn-style-link:hover,
+.btn-style-link:active {
+  background-color: #f3e885;
+  color: #2b283a;
 }
 
 /* layout */
 
-header, section, footer {
-    padding: 2.8rem 0;
+header,
+section,
+footer {
+  padding: 1.25em 0;
 }
 
-header, .section-two {
-    background-color: #5f29a3;
-    color: whitesmoke;
+header,
+.section-two {
+  background-color: #5f29a3;
+  color: whitesmoke;
 }
 
 p {
-    margin: 1rem 0;
-    line-height: 1.44rem;
+  margin: 1em 0;
+  line-height: 1.44rem;
 }
 
 .container {
-    width: 38.75rem;
-    margin: 0 auto;
+  width: 90%;
+  /* Fixed values in pixels - more maneagable */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #5f29a3;
-    padding: 2.8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5f29a3;
+}
+
+/* ----- NAVIGATION ----- */
+
+nav a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.125rem;
+  padding: 0.85em 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 /* images */
 
 .main-img {
-    margin: 2.5rem 0;
-    width: 100%;
+  display: block;
+  margin: 2.5em auto;
+  width: 100%;
+  max-width: 720px;
 }
 
 .img-wrapper {
-    display: flex;
-    justify-content: space-between;
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1em;
+}
+
+.img-wrapper .feature-item-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 260px;
 }
 
 .sec-two-img {
-    margin-top: 1rem;
-    border-radius: 0.29rem;
-    width: 18.75rem;
+  /* Border-radius takes em value from self or if no font-size set, its parent...climbing the DOM tree all the way to default if none found */
+  border-radius: 0.29em;
+  width: 100%;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media screen and (max-width: 767px) {
+  header {
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 1.5em;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px dotted #a190b6;
+  }
+}
+
+/* @media screen and (min-width: 480px) {
+  .img-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sec-two-img {
+    width: 48.4%;
+  }
+} */
+
+@media screen and (min-width: 768px) {
+  header,
+  section,
+  footer {
+    padding: 2.8em 0;
+  }
+
+  header .container,
+  header ul {
+    display: flex;
+  }
+
+  header .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  nav {
+    margin-left: auto;
+  }
+
+  header ul {
+    column-gap: 1em;
+  }
+
+  /* allows margins on top and bottom as opposed to inline  */
+  .btn-style-link {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .subheading {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
 }
 
 /* 
